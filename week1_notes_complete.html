@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 1 — Introduction to Marketing | Notes</title>
+<style>
+:root{--ink:#172033;--muted:#5c667a;--bg:#f4f7fb;--card:#fff;--line:#dfe6f0;--blue:#2457d6;--blue2:#eaf0ff;--teal:#087f8c;--teal2:#e5f7f7;--orange:#a64b08;--orange2:#fff2e6;--green:#167345;--green2:#e8f8ef;--purple:#6941c6;--purple2:#f1ecff;--shadow:0 12px 32px rgba(23,32,51,.07)}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.72 Inter,Segoe UI,Arial,sans-serif}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+.hero{background:linear-gradient(125deg,#14264b,#2457d6 65%,#168a9b);color:#fff;padding:54px 22px 44px}
+.hero-inner{max-width:1180px;margin:auto}
+.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:.78rem;font-weight:800;opacity:.8}
+h1{font-size:clamp(2.1rem,5vw,3.5rem);line-height:1.12;margin:12px 0}
+.hero p{max-width:780px;color:#e7edff;font-size:1.08rem;margin:0}
+.hero-pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.pill{border:1px solid #ffffff55;background:#ffffff16;padding:6px 11px;border-radius:99px;font-size:.84rem}
+.layout{max-width:1280px;margin:26px auto;padding:0 18px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:24px}
+.sidebar{position:sticky;top:16px;align-self:start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow);max-height:calc(100vh - 32px);overflow:auto}
+.sidebar strong{display:block;margin-bottom:10px}
+.sidebar a{display:block;padding:7px 9px;border-radius:8px;color:#35415a;font-size:.91rem}
+.sidebar a:hover{background:var(--blue2);text-decoration:none;color:var(--blue)}
+main{min-width:0}
+section{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(20px,3vw,34px);margin-bottom:22px;box-shadow:var(--shadow);scroll-margin-top:20px}
+h2{font-size:1.65rem;line-height:1.25;margin:0 0 16px;letter-spacing:-.025em}
+h3{font-size:1.15rem;margin:25px 0 8px}
+h4{font-size:1rem;margin:16px 0 6px}
+p{margin:8px 0 13px}
+ul,ol{padding-left:24px}
+li{margin:5px 0}
+.lead{font-size:1.06rem;color:#3f4a60}
+.kicker{font-size:.76rem;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:var(--blue);margin-bottom:6px}
+.callout{padding:15px 17px;border-radius:12px;margin:16px 0;border-left:4px solid var(--blue);background:var(--blue2)}
+.callout.teal{border-color:var(--teal);background:var(--teal2)}
+.callout.orange{border-color:var(--orange);background:var(--orange2)}
+.callout.green{border-color:var(--green);background:var(--green2)}
+.callout.purple{border-color:var(--purple);background:var(--purple2)}
+.formula{font-size:1.15rem;font-weight:800;text-align:center;padding:18px;border-radius:12px;background:#15284d;color:white;margin:15px 0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.mini{border:1px solid var(--line);border-radius:12px;padding:15px;background:#fbfcff}
+.mini h4{margin-top:0}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.94rem}
+th,td{border:1px solid var(--line);padding:11px 12px;text-align:left;vertical-align:top}
+th{background:#edf2fb;color:#24324b}
+tr:nth-child(even) td{background:#fbfcfe}
+.tag{display:inline-block;font-size:.78rem;font-weight:800;padding:3px 8px;border-radius:6px;background:var(--blue2);color:var(--blue)}
+.steps{counter-reset:step;list-style:none;padding:0}
+.steps li{counter-increment:step;position:relative;padding:2px 0 14px 43px}
+.steps li:before{content:counter(step);position:absolute;left:0;top:0;width:29px;height:29px;display:grid;place-items:center;background:var(--blue);color:#fff;border-radius:50%;font-weight:800}
+.case{border:1px solid var(--line);border-radius:13px;padding:18px;margin:13px 0}
+.case h3{margin-top:0}
+.answer{margin-top:10px;border-radius:10px;padding:12px 14px;background:var(--green2);border-left:4px solid var(--green)}
+.answer strong{color:var(--green)}
+.question{border:1px solid var(--line);border-radius:14px;padding:18px;margin:16px 0;break-inside:avoid}
+.question h3{margin:0 0 9px;font-size:1.04rem}
+.options{list-style:none;padding:0;margin:10px 0}
+.options li{padding:6px 10px;margin:5px 0;border:1px solid #e4e9f1;border-radius:8px}
+.options li.correct{background:var(--green2);border-color:#a7dfbf;font-weight:700}
+.options .letter{display:inline-block;min-width:24px;font-weight:800}
+.small{font-size:.9rem;color:var(--muted)}
+footer{text-align:center;color:var(--muted);padding:20px}
+.toplink{display:inline-block;margin-top:10px;font-size:.9rem}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{position:relative;top:auto;max-height:none}.sidebar nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px}.grid{grid-template-columns:1fr}}
+@media(max-width:540px){.hero{padding:38px 18px}.layout{padding:0 10px;margin:14px auto}section{padding:18px}table{display:block;overflow-x:auto;white-space:normal}.sidebar nav{grid-template-columns:1fr}}
+@media print{body{background:white;font-size:11pt}.hero{padding:22px;background:#fff;color:#111;border-bottom:2px solid #222}.hero p{color:#333}.layout{display:block;max-width:none;margin:0;padding:0}.sidebar{display:none}section{box-shadow:none;break-inside:avoid;border:0;border-bottom:1px solid #ccc;padding:18px 0}.question{break-inside:avoid}.hero-pills{display:none}a{color:inherit}}
+</style>
+</head>
+<body>
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div class="eyebrow">Marketing Management · Week 1</div>
+    <h1>Introduction to Marketing</h1>
+    <p>Complete study notes covering marketing definitions, value, customer needs, market orientation, strategy, case studies, services, marketing evolution and contemporary issues.</p>
+    <div class="hero-pills"><span class="pill">6 lecture themes</span><span class="pill">Definitions & frameworks</span><span class="pill">Case studies</span><span class="pill">10 assignment MCQs with explanations</span></div>
+  </div>
+</header>
+
+<div class="layout">
+<aside class="sidebar">
+  <strong>On this page</strong>
+  <nav>
+    <a href="#intro">Introduction</a>
+    <a href="#definitions">1. Defining Marketing & Value</a>
+    <a href="#core">2. Core Concepts</a>
+    <a href="#cases">3. Case Studies</a>
+    <a href="#services">4. Marketing of Services</a>
+    <a href="#evolution">5. Evolution & Offerings</a>
+    <a href="#contemporary">6. Contemporary Issues</a>
+    <a href="#glossary">Quick Definitions Table</a>
+    <a href="#takeaways">Key Takeaways</a>
+    <a href="#assignment">Assignment: 10 Questions</a>
+  </nav>
+</aside>
+
+<main>
+<section id="intro">
+  <div class="kicker">Overview</div>
+  <h2>Introduction</h2>
+  <p class="lead">Marketing is often mistaken for advertising or aggressive selling. These visible activities are only a small part of a broader strategic process that starts with understanding customer needs and continues beyond the sale.</p>
+  <p>Marketing involves understanding what customers need and want, developing offerings that provide value, communicating their benefits, making them accessible, and building lasting relationships. It can be examined from social and organizational perspectives. Its central idea is <strong>value</strong>: customers compare the benefits they expect with the costs they must bear.</p>
+  <div class="callout"><strong>Core idea:</strong> Effective marketing is not simply selling what a company makes. It is creating, communicating and delivering value that resonates with customers while benefiting the organization and other stakeholders.</div>
+</section>
+
+<section id="definitions">
+  <div class="kicker">Lecture 1</div>
+  <h2>1. Defining Marketing and the Concept of Value</h2>
+  <h3>Marketing is more than selling or promotion</h3>
+  <p>Selling and promotion are activities within marketing, but marketing begins earlier—with understanding customer needs—and extends beyond the transaction through delivery, satisfaction and relationship management.</p>
+  <div class="grid">
+    <div class="mini">
+      <h4>Marketing as a social exchange process</h4>
+      <p>A social process through which individuals and groups obtain what they need and want by creating, offering and freely exchanging valuable products and services.</p>
+    </div>
+    <div class="mini">
+      <h4>Marketing as an organizational function</h4>
+      <p>The American Marketing Association defines marketing as an organizational function and a set of processes for creating, communicating and delivering value to customers, and managing customer relationships for organizational benefit.</p>
+    </div>
+  </div>
+  <h3>Conditions required for exchange</h3>
+  <ul>
+    <li>At least two parties must be involved.</li>
+    <li>Each party must possess something of value to the other.</li>
+    <li>Each party must be capable of communicating and delivering.</li>
+    <li>Each party must be free to accept or reject the exchange.</li>
+    <li>Each party must believe that dealing with the other is desirable.</li>
+  </ul>
+  <h3>Three core organizational marketing activities</h3>
+  <ol class="steps">
+    <li><strong>Creating value:</strong> Understand customer needs, define product specifications, design offerings and develop production methods. Customers may participate in co-creation from early stages.</li>
+    <li><strong>Communicating value:</strong> Inform customers about the offering, its features and the benefits it provides.</li>
+    <li><strong>Delivering value:</strong> Make the offering accessible through distribution, logistics and supply-chain management.</li>
+  </ol>
+  <h3>The concept of value</h3>
+  <div class="formula">Perceived Value = Perceived Benefits − Perceived Costs</div>
+  <div class="grid">
+    <div class="mini"><h4>Benefits</h4><ul><li>Functional benefits: usefulness and performance.</li><li>Emotional benefits: feelings, confidence or enjoyment.</li><li>Symbolic benefits: identity, image or status.</li></ul></div>
+    <div class="mini"><h4>Costs</h4><ul><li>Monetary: price paid.</li><li>Time: time spent searching, buying or waiting.</li><li>Energy: physical or mental effort.</li><li>Psychic: stress, uncertainty or perceived risk.</li></ul></div>
+  </div>
+  <div class="callout teal"><strong>Remember:</strong> Customers choose based on perceived value, not just the lowest price. An offering becomes attractive when its perceived benefits outweigh its perceived costs.</div>
+  <h3>The simple marketing system</h3>
+  <p>The system connects <strong>sellers (industry)</strong> with <strong>buyers (market)</strong>. Sellers provide products or services in exchange for money or other returns. Buyers also provide information and feedback, helping sellers understand needs and improve future offerings. This feedback loop is essential to customer-focused marketing.</p>
+</section>
+
+<section id="core">
+  <div class="kicker">Lecture 2</div>
+  <h2>2. Core Concepts in Marketing</h2>
+  <h3>Sales orientation vs. market orientation</h3>
+  <table><thead><tr><th>Sales-oriented approach (Product-out)</th><th>Market-oriented approach (Customer-in)</th></tr></thead><tbody>
+  <tr><td>Starts with the product the company has made.</td><td>Starts with customer needs and market understanding.</td></tr>
+  <tr><td>Emphasizes selling and promotion.</td><td>Emphasizes creating and delivering customer value.</td></tr>
+  <tr><td>Focuses on converting existing output into sales.</td><td>Focuses on satisfying customers and building lasting success.</td></tr>
+  </tbody></table>
+  <h3>Market orientation: Sense, Share, Respond</h3>
+  <div class="grid">
+    <div class="mini"><h4><span class="tag">1 · Sense</span></h4><p>Gather market intelligence about customer needs, competitors and changes in the market. This includes intelligence generation.</p></div>
+    <div class="mini"><h4><span class="tag">2 · Share</span></h4><p>Disseminate market insights across departments so the organization has a shared understanding of customers.</p></div>
+    <div class="mini"><h4><span class="tag">3 · Respond</span></h4><p>Use the information to design and deliver offerings that address declared and latent customer needs. This is responsiveness.</p></div>
+  </div>
+  <h3>Need, Want and Demand</h3>
+  <table><thead><tr><th>Concept</th><th>Meaning</th><th>Example</th><th>Marketing role</th></tr></thead><tbody>
+  <tr><td><strong>Need</strong></td><td>A basic, felt state of deprivation.</td><td>Hunger.</td><td>Identify needs.</td></tr>
+  <tr><td><strong>Want</strong></td><td>The specific form a need takes, influenced by culture and personality.</td><td>Wanting a particular meal.</td><td>Influence wants.</td></tr>
+  <tr><td><strong>Demand</strong></td><td>A want backed by the ability and willingness to purchase.</td><td>Wanting and being able to pay for that meal.</td><td>Focus on actionable demand.</td></tr>
+  </tbody></table>
+  <div class="callout orange"><strong>Easy memory aid:</strong> Need = deprivation → Want = preferred solution → Demand = want + buying power.</div>
+  <h3>Product as a bundle of benefits</h3>
+  <p>A product is not merely a physical object. It is a bundle of benefits that can be functional (what it does), emotional (how it makes a person feel) and symbolic (what it communicates about identity or status).</p>
+  <h3>Strategic marketing process: STPD</h3>
+  <ol class="steps">
+    <li><strong>Segmentation:</strong> Divide a broad market into groups with similar needs or characteristics.</li>
+    <li><strong>Targeting:</strong> Evaluate the segments and choose which group or groups to serve.</li>
+    <li><strong>Positioning:</strong> Create a distinct and meaningful image of the offering in the target customer's mind.</li>
+    <li><strong>Differentiation:</strong> Establish meaningful ways the offering provides distinct value compared with competitors.</li>
+  </ol>
+  <h3>Tactical marketing mix: the 4 Ps</h3>
+  <table><thead><tr><th>P</th><th>What it covers</th></tr></thead><tbody>
+  <tr><td><strong>Product</strong></td><td>Features, quality, design, branding and packaging.</td></tr>
+  <tr><td><strong>Price</strong></td><td>Price level, discounts, payment terms and pricing strategy.</td></tr>
+  <tr><td><strong>Place</strong></td><td>Distribution channels, availability, coverage, inventory and logistics.</td></tr>
+  <tr><td><strong>Promotion</strong></td><td>Advertising, personal selling, sales promotion and public relations.</td></tr>
+  </tbody></table>
+  <p><strong>Strategy before tactics:</strong> Understand the market, decide whom to serve and how to position the offering, then use the 4 Ps to implement the strategy.</p>
+</section>
+
+<section id="cases">
+  <div class="kicker">Lecture 3</div>
+  <h2>3. Case Studies in Marketing Success and Failure</h2>
+  <div class="case">
+    <h3>Honda Activa — market-oriented product development</h3>
+    <p><strong>Customer need:</strong> A practical, easy-to-use, fuel-efficient scooter suitable for everyday urban travel and multiple family members.</p>
+    <p><strong>Offering and value:</strong> Gearless riding, convenient starting, storage and anti-theft features, along with competitive pricing and attention to total cost of ownership.</p>
+    <p><strong>Marketing support:</strong> Targeted promotion and an extensive service network helped make ownership practical and convenient.</p>
+    <div class="callout green"><strong>Lesson:</strong> Success comes from understanding customer needs and combining useful product features with pricing, promotion and distribution that create strong perceived value.</div>
+  </div>
+  <div class="case">
+    <h3>Tata Nano — the danger of misaligned positioning</h3>
+    <p><strong>Original idea:</strong> An affordable car for the Indian market.</p>
+    <p><strong>Problem:</strong> Positioning it as the “cheapest car” created a perception that conflicted with the aspirational and status-related meanings many customers attach to car ownership.</p>
+    <p>Some customers could prefer a second-hand vehicle if it provided greater perceived status. Functional value and a low price could not fully overcome the negative positioning.</p>
+    <div class="callout orange"><strong>Lesson:</strong> Positioning must align with customers' perceptions and aspirations. Low price alone does not guarantee success.</div>
+  </div>
+  <table><thead><tr><th>Honda Activa</th><th>Tata Nano</th></tr></thead><tbody>
+  <tr><td>Matched practical everyday needs.</td><td>Affordable concept conflicted with the “cheapest” image.</td></tr>
+  <tr><td>Combined product benefits with service access and ownership value.</td><td>Low price could not fully compensate for perceived status costs.</td></tr>
+  <tr><td><strong>Lesson:</strong> Understand needs and deliver value.</td><td><strong>Lesson:</strong> Align positioning with customer aspirations.</td></tr>
+  </tbody></table>
+</section>
+
+<section id="services">
+  <div class="kicker">Lecture 4</div>
+  <h2>4. Marketing of Services: The Expanded Mix</h2>
+  <p>Services are intangible offerings, so customers often evaluate not only the outcome but also the people, process and environment through which the service is delivered. Marketing services therefore emphasizes the overall customer experience.</p>
+  <h3>The IHIP characteristics of services</h3>
+  <table><thead><tr><th>Characteristic</th><th>Meaning</th><th>Simple example</th></tr></thead><tbody>
+  <tr><td><strong>Intangibility</strong></td><td>A service cannot generally be touched or inspected like a physical product before purchase.</td><td>A haircut or hotel stay is experienced rather than examined as a physical object beforehand.</td></tr>
+  <tr><td><strong>Heterogeneity</strong></td><td>Service quality can vary by employee, customer, place or occasion.</td><td>A salon experience differs depending on the stylist or visit.</td></tr>
+  <tr><td><strong>Inseparability</strong></td><td>Production and consumption often occur at the same time, with the provider involved in delivery.</td><td>A haircut is delivered while the customer receives it.</td></tr>
+  <tr><td><strong>Perishability</strong></td><td>Unused service capacity cannot be stored for later sale.</td><td>An empty hotel room for a night cannot be sold again for that past night.</td></tr>
+  </tbody></table>
+  <h3>The 7 Ps of marketing</h3>
+  <table><thead><tr><th>Element</th><th>Meaning</th></tr></thead><tbody>
+  <tr><td>Product</td><td>The service or solution offered.</td></tr><tr><td>Price</td><td>What the customer pays and the pricing conditions.</td></tr><tr><td>Place</td><td>Where and how customers access the service.</td></tr><tr><td>Promotion</td><td>How the service is communicated to potential customers.</td></tr><tr><td><strong>People</strong></td><td>Employees and other people involved in service delivery; training, motivation and satisfaction matter.</td></tr><tr><td><strong>Process</strong></td><td>The activities and procedures used to deliver the service consistently.</td></tr><tr><td><strong>Physical Evidence</strong></td><td>Tangible cues and surroundings that help customers judge an otherwise intangible service.</td></tr>
+  </tbody></table>
+  <h3>Disneyland and experience excellence</h3>
+  <ul><li><strong>Positive Denial:</strong> When a request cannot be met, offer a useful alternative instead of simply saying no.</li><li><strong>Imagineering:</strong> Engineering imagination into a designed experience.</li><li><strong>Guestology:</strong> The systematic study of guests and their needs and experiences.</li></ul>
+  <h3>Service Marketing Triangle</h3>
+  <ul><li><strong>External marketing:</strong> Making promises to customers.</li><li><strong>Internal marketing:</strong> Preparing and supporting employees to deliver on promises.</li><li><strong>Interactive marketing:</strong> The actual interaction between employees and customers during service delivery.</li></ul>
+  <div class="callout teal"><strong>Taj Mahal Hotel case:</strong> Excellence in people, processes and physical evidence can become a powerful form of marketing. Consistently excellent service can create customer advocacy—customers who recommend the service to others.</div>
+</section>
+
+<section id="evolution">
+  <div class="kicker">Lecture 5</div>
+  <h2>5. Evolution of Marketing Thought and Offerings</h2>
+  <p>Marketing thought has evolved as organizations have changed their understanding of what drives success.</p>
+  <ol class="steps">
+    <li><strong>Production concept:</strong> Emphasizes mass production, efficiency, availability and affordability.</li>
+    <li><strong>Product concept:</strong> Emphasizes product quality, performance and features.</li>
+    <li><strong>Selling concept:</strong> Relies on aggressive selling and promotion to move products.</li>
+    <li><strong>Marketing concept:</strong> Focuses on understanding and satisfying customer needs.</li>
+    <li><strong>Market orientation concept:</strong> Makes market intelligence and customer responsiveness an organization-wide commitment.</li>
+    <li><strong>Holistic marketing concept:</strong> Integrates the many interconnected dimensions of marketing.</li>
+  </ol>
+  <h3>Four dimensions of holistic marketing</h3>
+  <div class="grid">
+    <div class="mini"><h4>Internal marketing</h4><p>Marketing to employees and ensuring they are equipped and motivated to serve customers.</p></div>
+    <div class="mini"><h4>Integrated marketing</h4><p>Coordinating channels and activities so the organization communicates a consistent message and delivers a coherent experience.</p></div>
+    <div class="mini"><h4>Relationship marketing</h4><p>Building long-term, mutually beneficial relationships with customers, partners and suppliers.</p></div>
+    <div class="mini"><h4>Socially responsible marketing</h4><p>Considering ethical, environmental and societal impacts alongside business outcomes.</p></div>
+  </div>
+  <h3>Types of market offerings</h3>
+  <ul>
+    <li><strong>Physical goods:</strong> Tangible items.</li>
+    <li><strong>Services:</strong> Activities or benefits provided to customers.</li>
+    <li><strong>Service bundles / destinations:</strong> Combined experiences such as destination marketing.</li>
+    <li><strong>Ideas:</strong> Messages or causes, such as “Make in India.”</li>
+    <li><strong>Organizations:</strong> Marketing an institution or organization.</li>
+    <li><strong>Personalities:</strong> Marketing people or public figures.</li>
+    <li><strong>Properties:</strong> Marketing property or ownership interests.</li>
+  </ul>
+</section>
+
+<section id="contemporary">
+  <div class="kicker">Lecture 6</div>
+  <h2>6. Contemporary Issues in Modern Marketing</h2>
+  <p>Marketing has evolved from a specialized department into an organization-wide philosophy. It is influential, but it also faces criticism when practices are manipulative, consume resources irresponsibly or harm society.</p>
+  <h3>Major contemporary issues</h3>
+  <table><thead><tr><th>Issue</th><th>Explanation and significance</th></tr></thead><tbody>
+  <tr><td><strong>Globalization</strong></td><td>Reduced barriers can intensify competition, encourage standardization and create opportunities for international collaboration.</td></tr>
+  <tr><td><strong>Green marketing</strong></td><td>Promotes environmentally friendly products, services and organizational behavior; helps respond to sustainability concerns, regulations and consumer expectations.</td></tr>
+  <tr><td><strong>Information technology</strong></td><td>Enables precise targeting, measurement of return on investment (ROI), e-commerce and database marketing. Marketers must keep developing digital skills.</td></tr>
+  <tr><td><strong>Marketing beyond for-profit organizations</strong></td><td>Marketing concepts are used by non-profits, political entities and social institutions as well as commercial businesses.</td></tr>
+  <tr><td><strong>Relationship marketing</strong></td><td>Supports retention, loyalty and long-term profitability rather than focusing only on acquiring new customers.</td></tr>
+  <tr><td><strong>Internal marketing</strong></td><td>Employee satisfaction, training and support help employees deliver better customer service.</td></tr>
+  <tr><td><strong>Marketing logistics</strong></td><td>Distribution and supply-chain decisions help ensure products are available at the right time and place.</td></tr>
+  <tr><td><strong>Stakeholder value</strong></td><td>Organizations are increasingly expected to create both economic and non-economic benefits for customers, employees, partners, society and other stakeholders.</td></tr>
+  </tbody></table>
+  <div class="callout orange"><strong>Critical perspective:</strong> Marketing can create value, but it can also be criticized for manipulative practices, resource consumption and negative social effects. Responsible marketing considers these consequences rather than measuring success only through sales.</div>
+</section>
+
+<section id="glossary">
+  <div class="kicker">Quick reference</div>
+  <h2>Important Terms: Definition and Significance</h2>
+  <table><thead><tr><th>Term</th><th>Definition</th><th>Significance</th></tr></thead><tbody>
+  <tr><td><strong>Marketing (Organizational Function)</strong></td><td>An organizational function and set of processes for creating, communicating and delivering value to customers, and managing customer relationships for organizational benefit.</td><td>Emphasizes marketing's strategic role in value creation and relationship management.</td></tr>
+  <tr><td><strong>Value</strong></td><td>The core marketing concept understood as benefits minus costs.</td><td>Drives customer decisions; customers seek offerings whose perceived benefits outweigh perceived costs.</td></tr>
+  <tr><td><strong>Market Orientation</strong></td><td>An organizational philosophy driven by sensing market needs, sharing information internally and responding with value propositions.</td><td>Moves the organization from product-out thinking to understanding customers and achieving sustained success.</td></tr>
+  <tr><td><strong>Need, Want, Demand</strong></td><td>Need is basic deprivation; want is the specific form a need takes; demand is a want backed by buying power.</td><td>Helps marketers distinguish the underlying need from preferences and actionable purchasing demand.</td></tr>
+  <tr><td><strong>7 Ps of Marketing</strong></td><td>Product, Price, Place, Promotion, People, Process and Physical Evidence.</td><td>Provides an expanded planning model suited to the characteristics of services.</td></tr>
+  <tr><td><strong>Holistic Marketing</strong></td><td>A comprehensive approach integrating internal, integrated, relationship and socially responsible marketing.</td><td>Recognizes that marketing is interconnected with all parts of an organization and its stakeholders.</td></tr>
+  <tr><td><strong>Relationship Marketing</strong></td><td>Focuses on long-term, mutually beneficial relationships with customers, channel partners and suppliers.</td><td>Encourages retention, loyalty, advocacy and stronger connections.</td></tr>
+  <tr><td><strong>Green Marketing</strong></td><td>Marketing practices promoting environmentally friendly products, services and organizational behavior.</td><td>Helps organizations respond to environmental concerns and demand for sustainable practices.</td></tr>
+  </tbody></table>
+</section>
+
+<section id="takeaways">
+  <div class="kicker">Final revision</div>
+  <h2>Key Takeaways</h2>
+  <ul>
+    <li>Marketing is the process of creating, communicating and delivering value, not merely selling or advertising.</li>
+    <li>Perceived value depends on benefits—functional, emotional and symbolic—minus costs such as money, time, energy and psychological effort.</li>
+    <li>Market orientation follows <strong>Sense → Share → Respond</strong>.</li>
+    <li>Need is deprivation; want is a specific preference; demand is a want backed by buying power.</li>
+    <li><strong>STPD</strong> guides strategic choices; the <strong>4 Ps</strong> implement them tactically.</li>
+    <li>Positioning must fit customer perceptions and aspirations; Tata Nano illustrates how the “cheapest” image can undermine appeal.</li>
+    <li>Services use the <strong>7 Ps</strong> because of their IHIP characteristics: Intangibility, Heterogeneity, Inseparability and Perishability.</li>
+    <li>Excellent service delivery and customer experience can become powerful marketing tools.</li>
+    <li>Marketing evolved from production and product focus toward customer orientation and holistic, socially responsible value creation.</li>
+    <li>Modern marketing must account for globalization, technology, sustainability, relationships, logistics and stakeholder value.</li>
+  </ul>
+  <h3>Conclusion</h3>
+  <p>Marketing is a dynamic, strategic and holistic discipline grounded in understanding customer needs, creating value and fostering relationships. Its frameworks help organizations choose customers to serve and how to serve them; its service and ethical dimensions emphasize experience and responsibility. As technology and expectations change, customer-centric adaptation and sustainable value creation remain essential.</p>
+</section>
+
+<section id="assignment">
+  <div class="kicker">Assignment 1 · Marketing Management I</div>
+  <h2>10 Assignment Questions with Answers & Explanations</h2>
+  <p class="lead">The correct option is highlighted in green. Each explanation is included beneath the options for quick revision.</p>
+
+  <article class="question">
+    <h3>1. A company focuses mainly on producing products and later attempts to sell them to customers. Another company studies customer needs first and then creates, communicates and delivers value accordingly. Which statement is correct?</h3>
+    <ul class="options"><li><span class="letter">a)</span> First is sales; second is marketing</li><li><span class="letter">b)</span> First is marketing; second is sales</li><li><span class="letter">c)</span> Both are marketing</li><li><span class="letter">d)</span> Both follow sales process</li></ul>
+    <div class="answer"><strong>Correct answer: a) First is sales; second is marketing.</strong><br><strong>Explanation:</strong> Sales focuses on selling products that have already been produced, while marketing starts by understanding customer needs and then creating, communicating and delivering value to satisfy those needs.</div>
+  </article>
+
+  <article class="question">
+    <h3>2. A company first analyzes customers, competitors, and its own capabilities. It then selects target markets and decides how the product should be positioned. Finally, it determines the product features, pricing, distribution and promotional activities. Which sequence is correct?</h3>
+    <ul class="options"><li><span class="letter">a)</span> Marketing Mix → Strategy → Analysis</li><li class="correct"><span class="letter">b)</span> Analysis → Strategy → Marketing Mix ✓</li><li><span class="letter">c)</span> Strategy → Analysis → Marketing Mix</li><li><span class="letter">d)</span> Marketing Mix → Analysis → Strategy</li></ul>
+    <div class="answer"><strong>Correct answer: b) Analysis → Strategy → Marketing Mix.</strong><br><strong>Explanation:</strong> Marketing decisions usually follow a logical sequence: first the company analyzes the market and competitors; next it develops a strategy by selecting target markets and positioning; finally it implements the strategy through the marketing mix—product, price, place and promotion.</div>
+  </article>
+
+  <article class="question">
+    <h3>3. A company separates the market into different customer groups with similar needs, chooses one specific group to serve and develops a distinct image for its product in the minds of those customers. Which option shows the correct order of steps?</h3>
+    <ul class="options"><li><span class="letter">a)</span> Targeting → Segmentation → Positioning</li><li><span class="letter">b)</span> Positioning → Segmentation → Targeting</li><li><span class="letter">c)</span> Segmentation → Positioning → Targeting</li><li class="correct"><span class="letter">d)</span> Segmentation → Targeting → Positioning ✓</li></ul>
+    <div class="answer"><strong>Correct answer: d) Segmentation → Targeting → Positioning.</strong><br><strong>Explanation:</strong> The company first divides the market into groups (Segmentation), then selects the most suitable group to serve (Targeting), and finally creates a distinct image for the product in that group's mind (Positioning).</div>
+  </article>
+
+  <article class="question">
+    <h3>4. Although the Tata Nano was launched as an innovative low-cost car for the Indian market, it failed to achieve the expected market success over time. What was the main reason for this outcome?</h3>
+    <ul class="options"><li><span class="letter">a)</span> It offered lower fuel efficiency compared to competing models</li><li><span class="letter">b)</span> Safety concerns led to frequent customer dissatisfaction</li><li class="correct"><span class="letter">c)</span> It was seen as the cheapest car instead of an affordable innovation ✓</li><li><span class="letter">d)</span> Limited dealership presence restricted accessibility in cities</li></ul>
+    <div class="answer"><strong>Correct answer: c) It was seen as the cheapest car instead of an affordable innovation.</strong><br><strong>Explanation:</strong> The Tata Nano was positioned as an affordable car, but customers largely perceived it as the “cheapest car.” This created a negative image and affected its appeal, especially among customers who wanted value and status along with affordability.</div>
+  </article>
+
+  <article class="question">
+    <h3>5. Honda Activa became highly successful in India by identifying an important market need among Indian consumers. Which market opportunity did Honda Activa successfully address?</h3>
+    <ul class="options"><li><span class="letter">a)</span> Rising demand for high-performance sports motorcycles</li><li><span class="letter">b)</span> Preference for manual gear motorcycles in cities</li><li><span class="letter">c)</span> Increasing interest in off-road adventure vehicles</li><li class="correct"><span class="letter">d)</span> Demand for a simple, fuel-efficient, easy-to-use family scooter ✓</li></ul>
+    <div class="answer"><strong>Correct answer: d) Demand for a simple, fuel-efficient, easy-to-use family scooter.</strong><br><strong>Explanation:</strong> The Honda Activa addressed the need for a scooter that was easy to ride, practical, fuel-efficient and suitable for everyday family use. By meeting this important customer need, it gained widespread acceptance in the Indian market.</div>
+  </article>
+
+  <article class="question">
+    <h3>6. A customer visits a salon and notices that the quality of service changes depending on the employee providing the service and the day of the visit. As a result, the experience is not always the same. Which unique characteristic of services is reflected in this situation?</h3>
+    <ul class="options"><li><span class="letter">a)</span> Perishability</li><li><span class="letter">b)</span> Intangibility</li><li class="correct"><span class="letter">c)</span> Heterogeneity ✓</li><li><span class="letter">d)</span> Inseparability</li></ul>
+    <div class="answer"><strong>Correct answer: c) Heterogeneity.</strong><br><strong>Explanation:</strong> Heterogeneity means that service quality can vary from one employee, customer or occasion to another. In this case, the salon experience changes depending on who provides the service and when it is provided.</div>
+  </article>
+
+  <article class="question">
+    <h3>7. A company gradually changed its approach from mass production to improved products, then to aggressive selling, customer focus and finally to creating long-term value for all stakeholders. Which option shows the correct order of marketing evolution?</h3>
+    <ul class="options"><li class="correct"><span class="letter">a)</span> Production → Product → Selling → Marketing → Market Orientation → Holistic Marketing ✓</li><li><span class="letter">b)</span> Production → Selling → Product → Marketing → Market Orientation → Holistic Marketing</li><li><span class="letter">c)</span> Product → Production → Selling → Marketing → Market Orientation → Holistic Marketing</li><li><span class="letter">d)</span> Production → Product → Marketing → Selling → Market Orientation → Holistic Marketing</li></ul>
+    <div class="answer"><strong>Correct answer: a) Production → Product → Selling → Marketing → Market Orientation → Holistic Marketing.</strong><br><strong>Explanation:</strong> Marketing evolved from production focus to product improvement, then aggressive selling, followed by a customer-focused marketing approach. It later moved toward market orientation and finally holistic marketing, which considers long-term value for customers, the organization and other stakeholders.</div>
+  </article>
+
+  <article class="question">
+    <h3>8. A company distributes customer insights across different departments and then uses those insights to design products, choose target markets and launch marketing campaigns that better satisfy customer needs. Which dimension of market orientation is reflected when the company takes action based on the shared information?</h3>
+    <ul class="options"><li><span class="letter">a)</span> Intelligence Dissemination</li><li><span class="letter">b)</span> Intelligence Generation</li><li><span class="letter">c)</span> Market Segmentation</li><li class="correct"><span class="letter">d)</span> Responsiveness ✓</li></ul>
+    <div class="answer"><strong>Correct answer: d) Responsiveness.</strong><br><strong>Explanation:</strong> Responsiveness means taking action based on customer and market information. Here the company uses shared customer insights to design products, select target markets and create campaigns that better meet customer needs.</div>
+  </article>
+
+  <article class="question">
+    <h3>9. A company adopts a strong market-oriented approach. Over time, it experiences higher profits, increased sales growth and improved market share. Which consequence of market orientation is illustrated in this situation?</h3>
+    <ul class="options"><li><span class="letter">a)</span> Market segmentation</li><li><span class="letter">b)</span> Employee response</li><li class="correct"><span class="letter">c)</span> Business performance ✓</li><li><span class="letter">d)</span> Customer response</li></ul>
+    <div class="answer"><strong>Correct answer: c) Business performance.</strong><br><strong>Explanation:</strong> Market orientation helps a company better understand and respond to customer needs. This can lead to higher profits, increased sales growth and improved market share, which are all indicators of better business performance.</div>
+  </article>
+
+  <article class="question">
+    <h3>10. A company focuses on developing long-term relationships with customers, suppliers and business partners in order to create ongoing value for all parties involved. Which aspect of holistic marketing is illustrated in this situation?</h3>
+    <ul class="options"><li><span class="letter">a)</span> Internal Marketing</li><li class="correct"><span class="letter">b)</span> Relationship Marketing ✓</li><li><span class="letter">c)</span> Integrated Marketing</li><li><span class="letter">d)</span> Socially Responsible Marketing</li></ul>
+    <div class="answer"><strong>Correct answer: b) Relationship Marketing.</strong><br><strong>Explanation:</strong> Relationship marketing focuses on building and maintaining long-term, mutually beneficial relationships with customers, suppliers and business partners. The goal is to create ongoing value and loyalty for all parties.</div>
+  </article>
+  <div class="callout green"><strong>Assignment revision tip:</strong> Try answering each question before reading the green answer panel. Focus on why the correct option fits the concept, not just on memorizing its letter.</div>
+</section>
+<footer><p>Week 1 · Introduction to Marketing</p><a class="toplink" href="#top">↑ Back to top</a></footer>
+</main>
+</div>
+</body>
+</html>
